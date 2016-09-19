@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pasta Box</string>
+    <string name="main_button_str">6 sided dice</string>
+    <string name="button">20 sided button</string>
+    <string name="path">/storage/sdcard1/Pictures/Vrac</string>
+    <string name="img_str">img</string>
+    <string name="psw_hint">kheops</string>
+</resources>

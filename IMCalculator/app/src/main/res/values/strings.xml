@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">IMCalculator</string>
+    <string name="weight">Poids :</string>
+    <string name="weight_hint">Poids (kg)</string>
+    <string name="height">Height :</string>
+    <string name="height_hint">Height</string>
+    <string name="height_meter">Mètre</string>
+    <string name="height_centimeter">Centimètre</string>
+    <string name="function">Méga fonction !</string>
+    <string name="calcul_button">Calculer l\'IMC !</string>
+    <string name="raz_button">Reset</string>
+    <string name="result_text">Résultat :\nVous devez cliquer sur le boutton \"Calculer l\'IMC\" pour obtenir un résultat</string>
+    <string name="result">Résultat:\nVotre IMC est de :</string>
+    <string name="hello">Hello World !</string>
+    <string name="toast">You must fill height and weight correctly to calcul your IMC !</string>
+</resources>
