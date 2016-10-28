@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Snoozer</string>
+    <string name="music_directory">/storage/sdcard1/Musique</string>
+</resources>
