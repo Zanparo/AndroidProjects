@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_settings"
+        android:title="settings"
+        android:icon="@mipmap/ic_settings_black_24dp"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/create_task"
+        android:title="create"
+        android:icon="@mipmap/ic_create_black_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        ></item>
+
+    <item
+        android:id="@+id/order_spinner"
+        android:title="sort"
+        android:icon="@mipmap/ic_reorder_black_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.Spinner"/>
+
+
+    <!-- Settings, should always be in the overflow -->
+
+
+</menu>

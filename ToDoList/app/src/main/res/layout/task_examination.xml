@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/display_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_margin="0dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:padding="0dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alignmentMode="alignBounds"
+            android:columnCount="2"
+            android:rowCount="8"
+            android:useDefaultMargins="true">
+
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:minWidth="50dp"
+                android:text="@string/name_hin" />
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:layout_row="1"
+                android:ems="10"
+                android:hint="@string/name_of_your_task"
+                android:inputType="textPersonName"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/title_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+                android:minWidth="50dp"
+                android:text="@string/content" />
+
+            <TextView
+                android:id="@+id/edit_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left"
+                android:layout_row="2"
+                android:hint="@string/content_of_your_task" />
+
+
+            <TextView
+                android:id="@+id/display_due_time"
+                style="@style/AlertDialog.AppCompat.Light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_gravity="center_horizontal"
+                android:layout_row="3"
+                android:onClick="showTimeFragment"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_row="4"
+                android:minHeight="10dp" />
+
+            <!-- <TextView
+                 android:text="Creation date :"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/title_creation_date"
+                 android:layout_width="wrap_content"
+                 android:layout_row="3"
+                 android:layout_column="0"/>-->
+
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:hint="Creation date of your task"
+                 android:layout_gravity="right"
+                 android:layout_column="1"
+                 android:layout_row="3"
+                 android:id="@+id/display_creation_date"
+                 />-->
+
+            <CalendarView
+                android:id="@+id/display_due_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_gravity="center_horizontal"
+                android:layout_row="5"
+                android:background="@drawable/border"
+                android:onClick="showDateFragment" />
+
+            <TextView
+                android:layout_column="0"
+                android:layout_row="6"
+                android:textSize="16dp"
+                android:padding="10dp"
+                android:textColor="@color/mainTextColor"
+                android:id="@+id/progress_text"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"/>
+
+            <SeekBar
+                android:minWidth="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progress"
+                android:layout_row="6"
+                android:layout_column="1"
+                android:layout_gravity="center_vertical"
+                android:max="100"
+                style="@style/Widget.AppCompat.SeekBar" />
+
+            <ImageButton
+                android:id="@+id/validation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="right"
+                android:layout_margin="10dp"
+                android:layout_row="7"
+                android:background="?android:colorBackground"
+                android:minHeight="40dp"
+                android:minWidth="40dp"
+                android:onClick="validate"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_check_circle_black_24dp"
+                android:text="Validate" />
+
+
+            <ImageButton
+                android:id="@+id/delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="left"
+                android:layout_row="7"
+                android:background="?android:colorBackground"
+                android:minHeight="40dp"
+                android:minWidth="40dp"
+                android:layout_margin="10dp"
+                android:onClick="delete"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_delete_black_24dp"
+                android:text="Delete" />
+
+
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>

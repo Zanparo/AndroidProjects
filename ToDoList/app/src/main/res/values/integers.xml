@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="TASK_EXAM">0</integer>
+    <integer name="TASK_LIST">1</integer>
+    <integer name="TASK_CREATE">2</integer>
+    <integer name="DATE_SELECT">3</integer>
+</resources>

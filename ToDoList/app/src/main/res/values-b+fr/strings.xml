@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="pathname">save4.txt</string>
+    <string name="delete_dialog">Voulez vous vraiment supprimer cette tâche ?</string>
+    <string name="confirm">Accepter</string>
+    <string name="cancel">Annuler</string>
+    <string name="delete_dialog_title">Supprimer la tâche ?</string>
+    <string name="progress_string">Progrès :\n%d%%</string>
+    <string name="no_update">Tâche non modifiée.</string>
+    <string name="no_task">Aucune tâche à charger.</string>
+    <string name="name_hin">Nom :</string>
+    <string name="name_of_your_task">Nom de la tâche</string>
+    <string name="content">Contenu :</string>
+    <string name="content_of_your_task">Contenu de votre tâche</string>
+</resources>
