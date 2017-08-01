@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <Spinner
+            android:id="@+id/scenar_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borders_dark_blue"
+            android:clickable="true"
+            android:entries="@array/scenars" />
+
+        <LinearLayout
+            android:id="@+id/general_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!--Cost questions layout-->
+            <TextView
+                android:id="@+id/budget_questions_appear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borders"
+                android:onClick="changeQuestionsFocus"
+                android:padding="2dp"
+                android:text="@string/budget_questions_appear_text"
+                android:textAlignment="center"
+                android:textColor="@color/brown"
+                android:textSize="20dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/budget_questions_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borders"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standart_space_height"></Space>
+
+                <LinearLayout
+                    android:id="@+id/ask_budget_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="4dip"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/budget_q"
+                        android:layout_width="@dimen/max_width_text_sim"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:maxWidth="@dimen/max_width_text_sim"
+                        android:text="@string/budget_q" />
+
+                    <Space
+                        android:layout_width="@dimen/standart_space_height"
+                        android:layout_height="match_parent"></Space>
+
+                    <Button
+                        android:id="@+id/budget_q_button"
+                        style="@style/Widget.AppCompat.Button"
+                        android:layout_width="@dimen/button_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:onClick="switchBudgetQuestion"
+                        android:text="@string/budget_a" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/value_budget_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="@dimen/max_width_text_sim"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:maxWidth="180dp"
+                        android:text="@string/budget_value_q" />
+
+                    <Space
+                        android:layout_width="@dimen/standart_space_height"
+                        android:layout_height="match_parent"></Space>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/edit_budget_unit"
+                            android:layout_width="@dimen/edit_text_width"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|right"
+                            android:ems="6"
+                            android:hint="@string/budget_value_h"
+                            android:inputType="numberDecimal" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/budget_unit_one"
+                                android:textColor="@color/brown"/>
+
+                            <Switch
+                                android:id="@+id/budget_unit_switch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:thumb="@drawable/switch_thumb_selector"
+                                android:track="@drawable/switch_track_selector" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/budget_unit_two"
+                                android:textColor="@color/light_blue"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/budget_priority_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="4dip">
+
+                    <TextView
+                        android:layout_width="@dimen/max_width_text_sim"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="@dimen/max_width_text_sim"
+                        android:text="@string/area_priority_q" />
+
+                    <Space
+                        android:layout_width="@dimen/standart_space_height"
+                        android:layout_height="match_parent"></Space>
+
+                    <Button
+                        android:id="@+id/budget_priority_button"
+                        android:layout_width="@dimen/button_width_size"
+                        android:layout_height="wrap_content"
+                        android:onClick="changePriorityText" />
+                    <!--<Spinner
+                                        android:id="@+id/budget_priority_spinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right|center_vertical|end"
+                                        android:entries="@array/priority_a"></Spinner>-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/budget_flexibility_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="4dip">
+
+                    <TextView
+                        android:layout_width="@dimen/max_width_text_sim"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="@dimen/max_width_text_sim"
+                        android:text="@string/area_flexibility_q" />
+
+                    <Space
+                        android:layout_width="@dimen/standart_space_height"
+                        android:layout_height="match_parent"></Space>
+
+                    <Button
+                        android:id="@+id/budget_flexibility_button"
+                        android:layout_width="@dimen/button_width_size"
+                        android:layout_height="wrap_content"
+                        android:onClick="changeFlexiblityText"></Button>
+                    <!--                <Spinner
+                                        android:id="@+id/budget_flexibility_spinner"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="right|center_vertical|end"
+                                        android:entries="@array/flexibility_a"></Spinner>-->
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standart_space_height"></Space>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standart_space_height"></Space>
+
+            <!--Areas questions layout-->
+            <TextView
+                android:id="@+id/area_questions_appear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borders"
+                android:onClick="changeQuestionsFocus"
+                android:padding="2dp"
+                android:text="@string/area_questions_appear_text"
+                android:textAlignment="center"
+                android:textColor="@color/brown"
+                android:textSize="20dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/area_questions_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borders"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standart_space_height"></Space>
+
+                <LinearLayout
+                    android:id="@+id/area_main_q_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/max_width_text_sim"
+                        android:layout_height="wrap_content"
+                        android:text="@string/area_distrib_q" />
+
+                    <Space
+                        android:layout_width="@dimen/standart_space_height"
+                        android:layout_height="match_parent"></Space>
+
+                    <Spinner
+                        android:id="@+id/area_distrib_spinner"
+                        android:layout_width="@dimen/button_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical|end"
+                        android:entries="@array/area_distrib_a"></Spinner>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/area_all_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:text="@string/area_amount_q" />
+
+                        <Space
+                            android:layout_width="@dimen/standart_space_height"
+                            android:layout_height="match_parent"></Space>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edit_area_amount"
+                                android:layout_width="@dimen/edit_text_width"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|right"
+                                android:ems="6"
+                                android:hint="@string/budget_value_h"
+                                android:inputType="number" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/area_unit_one"
+                                    android:textColor="@color/brown"/>
+
+                                <Switch
+                                    android:id="@+id/area_unit_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:thumb="@drawable/switch_thumb_selector"
+                                    android:track="@drawable/switch_track_selector" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/area_unit_two"
+                                    android:textColor="@color/light_blue"/>
+                                <!--<Spinner
+                                    android:id="@+id/area_unit_spinner"
+                                    android:layout_width="@dimen/button_width_size"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|right"
+                                    android:entries="@array/area_units"></Spinner>-->
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/total_areas_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total_areas_q" />
+
+                        <Space
+                            android:layout_width="@dimen/standart_space_height"
+                            android:layout_height="match_parent"></Space>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/edit_total_areas"
+                                android:layout_width="@dimen/edit_text_width"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|right"
+                                android:ems="6"
+                                android:hint="@string/budget_value_h"
+                                android:inputType="number" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/area_unit_one"
+                                    android:textColor="@color/brown"/>
+
+                                <Switch
+                                    android:id="@+id/total_area_unit_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:thumb="@drawable/switch_thumb_selector"
+                                    android:track="@drawable/switch_track_selector" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/area_unit_two"
+                                    android:textColor="@color/light_blue"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/area_priority_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="4dip">
+
+                        <TextView
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:text="@string/area_priority_q" />
+
+                        <Space
+                            android:layout_width="@dimen/standart_space_height"
+                            android:layout_height="match_parent"></Space>
+
+                        <Button
+                            android:id="@+id/area_priority_button"
+                            android:layout_width="@dimen/button_width_size"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:onClick="changePriorityText"></Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/area_flexibility_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="4dip">
+
+                        <TextView
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:text="@string/area_flexibility_q" />
+
+                        <Space
+                            android:layout_width="@dimen/standart_space_height"
+                            android:layout_height="match_parent"></Space>
+
+                        <Button
+                            android:id="@+id/area_flexibility_button"
+                            android:layout_width="@dimen/button_width_size"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right|center_vertical"
+                            android:onClick="changeFlexiblityText"></Button>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standart_space_height"></Space>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/standart_space_height"></Space>
+
+            <!--Key questions layout-->
+            <TextView
+                android:id="@+id/key_questions_appear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borders"
+                android:onClick="changeQuestionsFocus"
+                android:padding="2dp"
+                android:text="@string/key_questions_appear_text"
+                android:textAlignment="center"
+                android:textColor="@color/brown"
+                android:textSize="20dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/key_questions_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borders"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standart_space_height"></Space>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="@dimen/max_width_text_sim"
+                            android:text="@string/spatial_q" />
+
+                        <Button
+                            android:id="@+id/spatial_priority_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="changePriorityText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/spatial_spinner"
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:entries="@array/spatial_a"
+                            android:gravity="center_vertical"></Spinner>
+
+                        <Button
+                            android:id="@+id/spatial_flexibility_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:onClick="changeFlexiblityText" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- SPACE -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+
+                    <View
+                        android:layout_width="150dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/separation"></View>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="@dimen/max_width_text_sim"
+                            android:text="@string/past_data_q" />
+
+                        <Button
+                            android:id="@+id/past_data_priority_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changePriorityText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/past_data_spinner"
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/past_data_a"></Spinner>
+
+                        <Button
+                            android:id="@+id/past_data_flexibility_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changeFlexiblityText" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- SPACE -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+
+                    <View
+                        android:layout_width="150dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/separation"></View>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="@dimen/max_width_text_sim"
+                            android:text="@string/need_data_q" />
+
+                        <Button
+                            android:id="@+id/need_data_priority_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changePriorityText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/need_data_spinner"
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/need_data_a" />
+
+                        <Button
+                            android:id="@+id/need_data_flexibility_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changeFlexiblityText" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- SPACE -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+
+                    <View
+                        android:layout_width="150dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/separation"></View>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="@dimen/max_width_text_sim"
+                            android:text="@string/quick_access_q" />
+
+                        <Button
+                            android:id="@+id/quick_access_priority_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changePriorityText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/quick_access_spinner"
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/quick_access_a" />
+
+                        <Button
+                            android:id="@+id/quick_access_flexibility_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changeFlexiblityText" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- SPACE -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+
+                    <View
+                        android:layout_width="150dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/separation"></View>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/standart_space_height"></Space>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxWidth="@dimen/max_width_text_sim"
+                            android:text="@string/frequency_q" />
+
+                        <Button
+                            android:id="@+id/frequency_priority_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changePriorityText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/frequency_spinner"
+                            android:layout_width="@dimen/max_width_text_sim"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/frequency_a" />
+
+                        <Button
+                            android:id="@+id/frequency_flexibility_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="changeFlexiblityText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/standart_space_height"></Space>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="generateResults"
+            android:text="Generate" />
+
+        <TextView
+            android:id="@+id/exposal_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borders" />
+    </LinearLayout>
+</ScrollView>

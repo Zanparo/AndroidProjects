@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">Carbomap</string>
+    <string-array name="scenars">
+        <item>*Please select*</item>
+        <item>Storm event</item>
+        <item>Disease outbreak</item>
+        <item>Woodland carbon code monitoring</item>
+</string-array>
+    <string name="budget_q">Do you have a budget, a rough cost requirement, or a maximum cost in mind ?</string>
+    <string name="budget_a">Not yet</string>
+    <string name="budget_a1">Yes</string>
+    <string name="budget_value_q">Please enter your maximum cost (£) and the units:\n(e.g. total cost, or £ per hectare)</string>
+    <string name="budget_value_h">0,00</string>
+    <string-array name="budget_units">
+        <item>*Please select*</item>
+        <item>₤ per hectar</item>
+        <item>total ₤</item>
+    </string-array>
+    <string name="budget_priority_q">What priority would you give to the cost when picking the best solution ?</string>
+    <string-array name="priority_a">
+        <item>*Please select*</item>
+        <item>Low priority</item>
+        <item>Medium priority</item>
+        <item>High priority</item>
+    </string-array>
+    <string name="budget_flexibility_q">How flexible are your around your budget ?</string>
+    <string-array name="flexibility_a">
+        <item>*Please select*</item>
+        <item>No flexibility</item>
+        <item>Low flexibility</item>
+        <item>Medium flexibility</item>
+        <item>High flexibility</item>
+    </string-array>
+    <string name="area_distrib_q">What is the distribution of your areas of interest?</string>
+    <string-array name="area_distrib_a">
+        <item>*Please select*</item>
+        <item>One continuous block</item>
+        <item>Clustered pockets</item>
+        <item>Disparate pockets</item>
+    </string-array>
+    <string name="area_amount_q">What is the amount of area your Areas of Interest cover? Please choose the units:</string>
+    <string-array name="area_units">
+        <item>*Please select*</item>
+        <item>Hectares</item>
+        <item>km²</item>
+    </string-array>
+    <string name="total_areas_q">Please enter the total area over which your AOIs are distributed, and choose the units:</string>
+    <string name="area_priority_q">How important is it to map the whole area?</string>
+    <string name="area_flexibility_q">How flexible are you on mapping this exact total area?</string>
+    <string name="spatial_q">What is SPATIAL RESOLUTION of the data that you need?</string>
+    <string name="past_data_q">If you need PAST data, from when? How important is this? How flexible are you on the timing?</string>
+    <string name="need_data_q">How soon do you need NEW data? How important is this? How flexible are you on the timing</string>
+    <string name="quick_access_q">How quickly do you need ACCESS TO THE DATA? How important is this? How flexible are you on the timing?</string>
+    <string name="frequency_q">How FREQUENTLY do you intend to do this mapping exercise?</string>
+    <string-array name="spatial_a">
+        <item>*Please select*</item>
+        <item>Sub-Metre</item>
+        <item>Metre</item>
+        <item>High resolution (1 to 30m)</item>
+        <item>Medium resolution (30 to 100m)</item>
+        <item>Low resolution (100+m)</item>
+    </string-array>
+    <string-array name="past_data_a">
+        <item>*Please select*</item>
+        <item>None</item>
+        <item>Past month</item>
+        <item>Past season</item>
+        <item>Past 6 months</item>
+        <item>Past year</item>
+    </string-array>
+    <string-array name="need_data_a">
+        <item>*Please select*</item>
+        <item>None</item>
+        <item>Within 1 week</item>
+        <item>Within 2 weeks</item>
+        <item>Within 1 month</item>
+        <item>Within 2 months</item>
+        <item>This season</item>
+        <item>Next 6 months</item>
+    </string-array>
+    <string-array name="quick_access_a">
+        <item>*Please select*</item>
+        <item>Days</item>
+        <item>1 to 2 weeks</item>
+        <item>Up to 1 month</item>
+        <item>Up to 2 months</item>
+        <item>2 to 6 months</item>
+    </string-array>
+    <string-array name="frequency_a">
+        <item>*Please select*</item>
+        <item>Time period comparison (2 points)</item>
+    </string-array>
+    <string name="key_questions_appear_text">Key questions</string>
+    <string name="budget_questions_appear_text">Budget questions</string>
+    <string name="area_questions_appear_text">Areas questions</string>
+    <string name="budget_unit_one">£/Hectare</string>
+    <string name="budget_unit_two">Total £</string>
+    <string name="area_unit_one">Hectares</string>
+    <string name="area_unit_two">Km²</string>
+</resources>

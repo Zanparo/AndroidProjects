@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="max_width_text_sim">200dp</dimen>
+    <dimen name="standart_space_height">20dp</dimen>
+    <dimen name="button_width_size">150dp</dimen>
+    <dimen name="edit_text_width">120dp</dimen>
+</resources>
